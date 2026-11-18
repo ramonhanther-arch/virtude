@@ -1,0 +1,32 @@
+begin;
+create function pg_temp.assert_goal(value boolean) returns void language plpgsql as $$ begin if value is distinct from true then raise exception 'personal goal assertion failed'; end if; end $$;
+insert into auth.users(id,email) values ('55555555-5555-4555-8555-555555555555','goal-a@example.test'),('66666666-6666-4666-8666-666666666666','goal-b@example.test');
+insert into auth.sessions(id,user_id,not_after) values ('cccccccc-cccc-4ccc-8ccc-cccccccccccc','55555555-5555-4555-8555-555555555555',now()+interval '1 hour'),('dddddddd-dddd-4ddd-8ddd-dddddddddddd','66666666-6666-4666-8666-666666666666',now()+interval '1 hour');
+update public.consents set sensitive_data=true where user_id in ('55555555-5555-4555-8555-555555555555','66666666-6666-4666-8666-666666666666');
+insert into public.journeys(user_id,focus,goal,difficulty) values ('55555555-5555-4555-8555-555555555555','self_control','Objetivo A','Dificuldade A'),('66666666-6666-4666-8666-666666666666','relationships','Objetivo B','Dificuldade B');
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"55555555-5555-4555-8555-555555555555","session_id":"cccccccc-cccc-4ccc-8ccc-cccccccccccc"}',true);
+select public.update_personal_goal('Objetivo atualizado','Dificuldade atualizada');
+select pg_temp.assert_goal((select goal='Objetivo atualizado' and difficulty='Dificuldade atualizada' and current_day=1 from public.journeys));
+select pg_temp.assert_goal((select count(*)=1 from public.personal_goals));
+select public.update_personal_goal('Meta2','Dificuldade');
+select public.update_personal_goal('Meta3','Dificuldade');
+select public.update_personal_goal('Meta4','Dificuldade');
+select public.update_personal_goal('Meta5','Dificuldade');
+do $$ begin
+ begin perform public.update_personal_goal('Meta6','Dificuldade'); exception when sqlstate 'P0429' then return; end;
+ raise exception 'Expected goal quota denial';
+end $$;
+select set_config('request.jwt.claims','{"sub":"66666666-6666-4666-8666-666666666666","session_id":"dddddddd-dddd-4ddd-8ddd-dddddddddddd"}',true);
+select pg_temp.assert_goal((select goal='Objetivo B' from public.journeys));
+select pg_temp.assert_goal((select count(*)=0 from public.personal_goals));
+reset role;
+delete from auth.sessions where user_id='66666666-6666-4666-8666-666666666666';
+set local role authenticated;
+do $$ begin
+ begin perform public.update_personal_goal('Meta','Dificuldade'); exception when insufficient_privilege then return; end;
+ raise exception 'Expected revoked session denial';
+end $$;
+reset role;
+select pg_temp.assert_goal(not has_function_privilege('anon','public.update_personal_goal(text,text)','EXECUTE'));
+rollback;

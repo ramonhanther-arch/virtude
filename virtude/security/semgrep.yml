@@ -1,0 +1,32 @@
+rules:
+  - id: virtude-no-raw-html
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: Conteúdo do usuário ou IA deve usar renderização React com escaping, sem HTML bruto.
+    pattern: dangerouslySetInnerHTML=$VALUE
+  - id: virtude-no-eval
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: Execução dinâmica não é permitida no produto.
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: new Function(...)
+  - id: virtude-no-process-execution
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: Código da aplicação não pode executar processos arbitrários.
+    pattern-regex: '(from\s+|require\()["\x27](node:)?child_process["\x27]'
+  - id: virtude-no-private-public-key
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: Credenciais privadas não podem usar prefixo público do Next.js.
+    pattern-regex: 'NEXT_PUBLIC_(OPENAI_API_KEY|SUPABASE_SERVICE_ROLE_KEY|SUPABASE_SECRET_KEY)'
+  - id: virtude-no-personal-console-logs
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: Aplicação não registra relatos, tokens ou respostas privadas no console.
+    pattern-either:
+      - pattern: console.log(...)
+      - pattern: console.info(...)
+      - pattern: console.debug(...)
+      - pattern: console.error(...)

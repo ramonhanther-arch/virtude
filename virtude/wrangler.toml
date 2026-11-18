@@ -1,0 +1,24 @@
+name = "virtude"
+account_id = "82fdc8a42ea400487cb4bf67dde6fb9a"
+main = "cloudflare/entry.mjs"
+compatibility_date = "2026-11-05"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# Gerado por `npm run cf:build` antes do deploy. Sem domínio custom.
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Hyperdrive `virtude-neon`. Em produção o app lê env.HYPERDRIVE.connectionString.
+# DATABASE_URL continua só para o Next local e para `npm run db:apply`.
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "f45e12d5fcf84c06a2e084fcabfa815f"
+
+[vars]
+AUTH_TRUST_HOST = "true"
+VIRTUDE_CONTENT_REVIEWERS = ""
+
+[triggers]
+crons = ["*/15 * * * *"]

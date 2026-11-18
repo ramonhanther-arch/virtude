@@ -1,0 +1,19 @@
+# VIRTUDE — briefing vigente
+
+Fonte: briefing master de Ramon recebido em 2026-10-27. PT-BR e Brasil prevalecem sobre a memória genérica de marketing em inglês. O texto recebido termina em «Ausência de política de tratamento» na seção 14.10; não presumir o restante.
+
+Construir um produto real em `virtude/`, preservando OpenSquad, dashboard e lucro. Next.js App Router, TypeScript, Tailwind, Supabase Auth/PostgreSQL/RLS, OpenAI no servidor. Sem cobrança, publicação ou integração externa com dados reais nesta rodada. Nenhuma credencial estava configurada no ambiente na inspeção inicial.
+
+Proposta: «Não apenas conhecer a Palavra. Aprender a vivê-la.» Aprendizado bíblico contextualizado, orientação e atitudes diárias fora da tela. Não prometer transformação comprovada, cura, riqueza ou mensagens de Deus. A IA não substitui atendimento profissional. Segurança em situações de violência prevalece sobre reconciliação.
+
+Três jornadas completas de 21 dias: `self_control`, `relationships`, `stewardship`. Vida espiritual é futura, desabilitada. Uma jornada ativa. Progressão por dias praticados, sem punição por ausência. Etapas: autoconhecimento 1–3, aprendizado 4–7, aplicação 8–14, consolidação 15–18, reflexão 19–21. Cada missão: referência, contexto, princípio, prática, alternativa simplificada, aprofundamento e pergunta. 63 conteúdos originais, sem transcrição de tradução protegida, todos `pending_review` até revisão humana. Produção bloqueia conteúdo não aprovado.
+
+Onboarding: área, dificuldade, objetivo e horário. Consentimento explícito de dados sensíveis, separado de IA, histórico e contexto compartilhado. Histórico opcional. Usuário controla compartilhamento. Check-in: realizou/tentou/não realizou, reflexão, adaptação, revisão semanal e continuação/recomeço. Mentor: escuta, fatos/interpretações, referências autorizadas, perguntas e ações. Ensaio textual identificado como simulação. Nenhuma sugestão entra no plano sem confirmação.
+
+Telas: landing com funcionamento/jornadas/mentor/planos/FAQ; login/cadastro/recuperação; onboarding; dashboard; missão; mentor; evolução; configurações/exportação/exclusão. Plano grátis com prática e Mentor limitado; Premium planejado R$29,90, sem checkout ou upgrade concedido por cliente. PWA sem cache de dados privados. Internacionalização preparada via locale.
+
+Design: mobile-first; verde #173F36, bege #F6F1E7, dourado #C6A86A, branco e grafite #202925. Direção editorial acolhedora, serifa refinada nos títulos e sans legível no corpo; pouco ornamento; foco no próximo gesto concreto. Navegação desktop lateral e mobile acessível. Sem cruzes decorativas, ranking espiritual, streak punitivo ou métricas inventadas.
+
+Segurança: autenticação e autorização em cada endpoint; sessões revogadas negadas imediatamente via sessão no banco; RLS por proprietário em CRUD; FKs compostas impedem vínculos entre usuários; privilégios mínimos; rate limiting persistente e atômico; validação Zod; erros genéricos e logs sem relatos; cookies HttpOnly/SameSite/Secure em produção; origem validada nas mutações; CSP/cabeçalhos; segredos somente servidor. IA sem ferramentas, contextos autorizados e limites de tokens, store:false, saída estruturada, referências restritas ao catálogo, validação de limites e testes adversariais. Sem alegar blindagem absoluta contra prompt injection.
+
+Privacidade: exportar e excluir conta/dados, apagar histórico ao revogar consentimento, eventos de produto sem texto livre sensível. Documentar retenção, backups, incidentes e limites dos provedores. CI com SAST/SCA/secret scanning, autorização, IA e configuração. Release bloqueado por vulnerabilidade crítica/alta explorável, isolamento quebrado, segredo exposto, autenticação/abuso deficientes ou revisão teológica pendente. Evidências de integração externa e revisão jurídica/teológica humana permanecem gates reais.

@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T19:48:46.029078+00:00",
+  "title": "Design System: VIRTUDE",
+  "extensions": {
+    "colorMeta": {
+      "pine": {
+        "role": "primary",
+        "displayName": "Pine",
+        "canonical": "#173f36"
+      },
+      "pine-deep": {
+        "role": "primary",
+        "displayName": "Pine deep",
+        "canonical": "#102922"
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Sand",
+        "canonical": "#f6f1e7"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#fffdf8"
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Gold",
+        "canonical": "#c6a86a"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#202925"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#d9d0c0"
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "canonical": "#66766b"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero no celular e títulos grandes."
+      },
+      "display-md": {
+        "displayName": "Display md",
+        "purpose": "Hero a partir de md e grandes seções públicas."
+      },
+      "display-lg": {
+        "displayName": "Display lg",
+        "purpose": "Hero a partir de lg e chamada final a partir de md."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de página no celular e títulos de painéis no desktop."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Missão no celular e subseções."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Formulações e números de dia."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto herdado do body."
+      },
+      "body-large": {
+        "displayName": "Body large",
+        "purpose": "Proposta e prática com entrelinha relaxada."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Input e textarea."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Labels e ações em peso 500."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Informação pequena; navegação mobile tem tamanho próprio."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "loading-pulse",
+        "value": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "purpose": "Somente skeleton em motion-safe; keyframe de 50% com opacity .5."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Duração de animações e transições em prefers-reduced-motion: reduce; uma iteração e rolagem auto."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "40rem"
+      },
+      {
+        "name": "md",
+        "value": "48rem"
+      },
+      {
+        "name": "lg",
+        "value": "64rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Variante existente de buttonClass; disabled reduz a opacidade. O estado pendente é controlado pelo componente React.",
+      "html": "<button type=\"button\" class=\"ds-button-primary\">Registrar este dia</button>",
+      "css": ".ds-button-primary{display:inline-flex;min-height:2.75rem;min-width:2.75rem;align-items:center;justify-content:center;gap:.5rem;padding:.5rem 1rem;text-align:center;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;border-radius:0;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);background:var(--color-pine,#173f36);color:var(--color-sand,#f6f1e7);border:0;}.ds-button-primary:hover{background:var(--color-pine-deep,#102922);}.ds-button-primary:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}.ds-button-primary:disabled{opacity:.5;cursor:not-allowed;}"
+    },
+    {
+      "name": "Botão secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Variante existente de buttonClass; disabled reduz a opacidade. O estado pendente é controlado pelo componente React.",
+      "html": "<button type=\"button\" class=\"ds-button-secondary\">Nova conversa</button>",
+      "css": ".ds-button-secondary{display:inline-flex;min-height:2.75rem;min-width:2.75rem;align-items:center;justify-content:center;gap:.5rem;padding:.5rem 1rem;text-align:center;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;border-radius:0;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);background:transparent;color:var(--color-pine,#173f36);border:1px solid var(--color-pine,#173f36);}.ds-button-secondary:hover{background:color-mix(in oklab,var(--color-pine,#173f36) 5%,transparent);}.ds-button-secondary:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}.ds-button-secondary:disabled{opacity:.5;cursor:not-allowed;}"
+    },
+    {
+      "name": "Botão discreto",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Variante existente de buttonClass; disabled reduz a opacidade. O estado pendente é controlado pelo componente React.",
+      "html": "<button type=\"button\" class=\"ds-button-quiet\">Cancelar</button>",
+      "css": ".ds-button-quiet{display:inline-flex;min-height:2.75rem;min-width:2.75rem;align-items:center;justify-content:center;gap:.5rem;padding:.5rem 1rem;text-align:center;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;border-radius:0;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);background:transparent;color:var(--color-pine,#173f36);border:0;padding-left:0;padding-right:0;text-underline-offset:4px;}.ds-button-quiet:hover{text-decoration:underline;}.ds-button-quiet:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}.ds-button-quiet:disabled{opacity:.5;cursor:not-allowed;}"
+    },
+    {
+      "name": "Botão destrutivo",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Variante existente de buttonClass; disabled reduz a opacidade. O estado pendente é controlado pelo componente React.",
+      "html": "<button type=\"button\" class=\"ds-button-danger\">Excluir conta</button>",
+      "css": ".ds-button-danger{display:inline-flex;min-height:2.75rem;min-width:2.75rem;align-items:center;justify-content:center;gap:.5rem;padding:.5rem 1rem;text-align:center;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;border-radius:0;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);background:transparent;color:var(--color-ink,#202925);border:1px solid var(--color-ink,#202925);}.ds-button-danger:hover{background:color-mix(in oklab,var(--color-ink,#202925) 5%,transparent);}.ds-button-danger:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}.ds-button-danger:disabled{opacity:.5;cursor:not-allowed;}"
+    },
+    {
+      "name": "Botão inverso",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "Variante existente de buttonClass; disabled reduz a opacidade. O estado pendente é controlado pelo componente React.",
+      "html": "<div class=\"ds-inverse-surface\"><button type=\"button\" class=\"ds-button-inverse\">Ver uma amostra</button></div>",
+      "css": ".ds-button-inverse{display:inline-flex;min-height:2.75rem;min-width:2.75rem;align-items:center;justify-content:center;gap:.5rem;padding:.5rem 1rem;text-align:center;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;border-radius:0;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);background:var(--color-sand,#f6f1e7);color:var(--color-pine,#173f36);border:0;}.ds-button-inverse:hover{background:var(--color-paper,#fffdf8);}.ds-button-inverse:focus-visible{outline:2px solid var(--color-gold,#c6a86a);outline-offset:3px;}.ds-button-inverse:disabled{opacity:.5;cursor:not-allowed;}.ds-inverse-surface{background:var(--color-pine,#173f36);padding:1rem;}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Label associado e controle paper com contorno field; erros são texto associado, sem borda semântica nova.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-goal\">Objetivo</label><input id=\"ds-goal\" type=\"text\" /></div>",
+      "css": ".ds-field{font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);color:var(--color-ink,#202925);}.ds-field label{display:block;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;}.ds-field input{display:block;margin-top:.5rem;width:100%;min-width:0;border:1px solid var(--color-field,#66766b);border-radius:0;background:var(--color-paper,#fffdf8);padding:.75rem;font-size:1rem;line-height:1.5;color:var(--color-ink,#202925);font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);}.ds-field input:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}"
+    },
+    {
+      "name": "Destino lateral ativo",
+      "kind": "nav",
+      "refersTo": "navigation-desktop",
+      "description": "Amostra de item atual do chrome desktop; a barra mobile e suas medidas estão documentadas no DESIGN.md.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Jornada\"><a class=\"ds-nav-link\" href=\"#conteudo\" aria-current=\"page\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg><span>Hoje</span><span class=\"ds-nav-line\" aria-hidden=\"true\"></span></a></nav>",
+      "css": ".ds-nav{background:var(--color-pine,#173f36);color:var(--color-sand,#f6f1e7);padding:1rem;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);}.ds-nav-link{display:flex;min-height:2.75rem;min-width:0;align-items:center;gap:.5rem;padding:.5rem;color:var(--color-sand,#f6f1e7);font-size:.875rem;line-height:calc(1.25 / .875);text-decoration:none;background:color-mix(in oklab,var(--color-sand,#f6f1e7) 10%,transparent);}.ds-nav-line{height:1px;width:1rem;margin-left:auto;background:var(--color-gold,#c6a86a);}.ds-nav-link:focus-visible{outline:2px solid var(--color-gold,#c6a86a);outline-offset:3px;}"
+    },
+    {
+      "name": "Painel de prática",
+      "kind": "card",
+      "refersTo": "practice-panel",
+      "description": "Superfície paper e filete pine; texto de exemplo identifica a função, sem simular uma missão aprovada.",
+      "html": "<article class=\"ds-practice\"><h2>Prática do dia</h2><p>Texto da prática do catálogo.</p><a href=\"#registro\">Registrar este dia</a></article>",
+      "css": ".ds-practice{border-top:1px solid var(--color-pine,#173f36);background:var(--color-paper,#fffdf8);padding:1rem;color:var(--color-ink,#202925);overflow-wrap:anywhere;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);font-size:1.0625rem;line-height:1.6;}.ds-practice h2{margin:0;font-size:1.875rem;line-height:1.2;font-weight:500;color:var(--color-pine,#173f36);text-wrap:balance;font-family:var(--font-serif,\"Cormorant Garamond\",Georgia,serif);}.ds-practice p{margin:.75rem 0 0;line-height:1.625;}.ds-practice a{display:inline-flex;min-height:2.75rem;min-width:2.75rem;align-items:center;justify-content:center;margin-top:1rem;background:var(--color-pine,#173f36);color:var(--color-sand,#f6f1e7);padding:.5rem 1rem;font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;text-decoration:none;}.ds-practice a:hover{background:var(--color-pine-deep,#102922);}.ds-practice a:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}@media(min-width:48rem){.ds-practice{padding:1.25rem;}.ds-practice h2{font-size:2.25rem;line-height:calc(2.5 / 2.25);}.ds-practice p{font-size:1.125rem;}}"
+    },
+    {
+      "name": "Resumo de revisão",
+      "kind": "custom",
+      "refersTo": "review-summary",
+      "description": "ReviewNote do tipo sample com detalhes nativos; a condição da amostra permanece visível no resumo.",
+      "html": "<details class=\"ds-review\"><summary><span role=\"status\">Amostra do catálogo · revisão humana pendente.</span></summary><p>Amostra do catálogo. Este texto ainda aguarda revisão humana e não está publicado como conteúdo aprovado.</p></details>",
+      "css": ".ds-review{border:1px solid var(--color-gold,#c6a86a);background:var(--color-paper,#fffdf8);padding:0 .75rem;font-size:.875rem;line-height:calc(1.25 / .875);color:var(--color-ink,#202925);font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);}.ds-review summary{cursor:pointer;min-height:2.75rem;align-content:center;}.ds-review p{margin:0;padding-bottom:.75rem;line-height:1.625;}.ds-review summary:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}"
+    },
+    {
+      "name": "Escolha de registro",
+      "kind": "input",
+      "description": "Radio nativo da prática; não há chip ou cor customizada de seleção além de accent pine.",
+      "html": "<fieldset class=\"ds-status\"><legend>Como foi a prática de hoje?</legend><label><input type=\"radio\" name=\"ds-status\" checked />Realizei</label><label><input type=\"radio\" name=\"ds-status\" />Tentei</label><label><input type=\"radio\" name=\"ds-status\" />Não realizei</label></fieldset>",
+      "css": ".ds-status{display:grid;gap:.75rem;border:0;padding:0;margin:0;color:var(--color-ink,#202925);font-size:1.0625rem;line-height:1.6;font-family:var(--font-sans,\"DM Sans\",\"Segoe UI\",sans-serif);}.ds-status legend{font-size:.875rem;line-height:calc(1.25 / .875);font-weight:500;}.ds-status label{display:flex;min-height:2.75rem;align-items:center;gap:.75rem;}.ds-status input{accent-color:var(--color-pine,#173f36);width:1.15rem;height:1.15rem;flex:none;}.ds-status input:focus-visible{outline:2px solid var(--color-pine,#173f36);outline-offset:3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Editorial sereno",
+    "overview": "Esta expressão registra a direção já construída e descrita em PRODUCT.md e `.impeccable/direction.md`: página bege, leitura em grafite, títulos em serifa e ações em verde. Painéis planos e filetes organizam a interface; não há ornamento religioso nem textura simulada. A documentação atualiza o DESIGN.md existente a partir do código, preservando a paleta e as famílias do briefing.\n\nA forma observada combina grade editorial na landing com proposta e amostra lado a lado no desktop, fluxo vertical no celular e aplicação com coluna de leitura e navegação lateral ou inferior. Hoje e Jornada priorizam uma prática concreta e o acesso ao registro; objetivo, dificuldade e horário ficam depois. A condição de prévia continua explícita.",
+    "keyCharacteristics": [
+      "Paleta do briefing preservada, com pine para títulos e ações e sand como campo.",
+      "Cormorant Garamond para títulos; DM Sans para leitura e controles.",
+      "Superfícies planas, bordas finas e cantos retos.",
+      "Prática seguida de registro antes do contexto pessoal.",
+      "Avisos verdadeiros, foco visível e textos pessoais completos."
+    ],
+    "rules": [
+      {
+        "name": "Paleta do Briefing",
+        "body": "Preserve os oito tokens observados; use gold para orientação e filetes, sem convertê-lo em texto pequeno sobre o fundo claro.",
+        "section": "colors"
+      },
+      {
+        "name": "Serifa e Orientação",
+        "body": "Títulos usam serifa; leitura, labels e ações usam sans. Metadados permanecem junto ao conteúdo e não viram etiquetas decorativas acima dos títulos.",
+        "section": "typography"
+      },
+      {
+        "name": "Prática Primeiro",
+        "body": "Em Hoje/Jornada, mantenha título e prática integral seguidos do acesso a “Registrar este dia”, antes de dificuldade, objetivo e horário. Na Jornada, contexto bíblico, princípio e três formulações continuam completos depois do resumo; a ação aponta para o formulário de registro.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do preservar a paleta do briefing e a combinação Cormorant Garamond/DM Sans.",
+      "Do apresentar a prática concreta e o acesso ao registro antes do contexto pessoal em Hoje/Jornada.",
+      "Do manter foco visível pine no claro e gold sobre pine, com contorno de 2px e afastamento de 3px.",
+      "Do manter textos pessoais completos e quebráveis, avisos verdadeiros e metadados funcionais junto do conteúdo.",
+      "Do respeitar a preferência por movimento reduzido e os estados nativos de campos e resumos."
+    ],
+    "donts": [
+      "Don't usar gold como texto pequeno sobre sand.",
+      "Don't introduzir ornamento religioso, ranking espiritual ou sequência punitiva.",
+      "Don't recolocar eyebrows decorativos acima dos títulos ou transformar todas as seções em cards.",
+      "Don't tratar `ship` das quatro correções como aprovação de produção ou inventar seed, comp e aprovação anteriores ao build."
+    ]
+  }
+}
